@@ -13,10 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\PugiXML">
+      <UniqueIdentifier>{fa4b1fe8-abdd-403b-a5ec-f67934dcf9e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parser">
+      <UniqueIdentifier>{334809b0-2c53-4e8f-8d82-1d9ee04aced5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parser">
+      <UniqueIdentifier>{bbdfcc55-6716-433a-996d-9cf7f34d9301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Consts">
+      <UniqueIdentifier>{c1ae95e5-305a-461e-a5ff-d53e8c8395e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Breakout.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="XMLParser.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="XMLParser.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\pugixml-master\src\pugiconfig.hpp">
+      <Filter>Header Files\PugiXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries\pugixml-master\src\pugixml.hpp">
+      <Filter>Header Files\PugiXML</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLTags.h">
+      <Filter>Header Files\Consts</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

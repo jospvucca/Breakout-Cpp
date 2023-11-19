@@ -1,10 +1,13 @@
 // Breakout.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include "XMLParser.h"
 #include <iostream>
 
 int main()
 {
+    XMLParser xmlParser("file.xml");
+    xmlParser.parseData();
     std::cout << "Hello World!\n";
 }
 

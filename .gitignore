@@ -79,3 +79,6 @@ Browse.VC.db
 # pugixml
 pugiconfig.hpp
 
+# Ignore Libraries folder
+Libraries/
+
