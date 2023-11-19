@@ -30,3 +30,52 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio files
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.cachefile
+ipch/
+*.dbmdl
+*.pch
+*.log
+*.tlog/
+Browse.VC.db
+*.VC.opendb
+*.VC.db
+*.VC.db-shm
+*.VC.db-wal
+
+# Visual Studio Code files
+.vscode/
+
+# Compiled files
+*.suo
+*.pdb
+*.idb
+*.obj
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+*.res
+*.aps
+*.ncb
+*.sbr
+*.sdf
+*.pyc
+*.pyo
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+
+# pugixml
+pugiconfig.hpp
+
