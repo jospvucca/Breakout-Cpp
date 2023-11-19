@@ -25,6 +25,9 @@
     <Filter Include="Header Files\Consts">
       <UniqueIdentifier>{c1ae95e5-305a-461e-a5ff-d53e8c8395e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Data">
+      <UniqueIdentifier>{2a2b4b59-3d93-4cdd-b234-296d02d95e52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="XMLParser.cpp">
       <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libraries\pugixml-master\src\pugixml.cpp">
+      <Filter>Header Files\PugiXML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -47,5 +53,13 @@
     <ClInclude Include="XMLTags.h">
       <Filter>Header Files\Consts</Filter>
     </ClInclude>
+    <ClInclude Include="XMLFiles.h">
+      <Filter>Header Files\Consts</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resources\Input\Level1.xml">
+      <Filter>Resource Files\Data</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

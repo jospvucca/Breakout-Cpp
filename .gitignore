@@ -52,6 +52,8 @@ Browse.VC.db
 
 # Visual Studio Code files
 .vscode/
+*.vsidx
+*.lock
 
 # Compiled files
 *.suo
@@ -81,4 +83,8 @@ pugiconfig.hpp
 
 # Ignore Libraries folder
 Libraries/
+
+# Ignore generated folder
+x64/
+
 

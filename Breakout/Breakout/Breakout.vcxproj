@@ -130,14 +130,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Libraries\pugixml-master\src\pugixml.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="XMLParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Libraries\pugixml-master\src\pugiconfig.hpp" />
     <ClInclude Include="..\..\Libraries\pugixml-master\src\pugixml.hpp" />
+    <ClInclude Include="XMLFiles.h" />
     <ClInclude Include="XMLParser.h" />
     <ClInclude Include="XMLTags.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Resources\Input\Level1.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

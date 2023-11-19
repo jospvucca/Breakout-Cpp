@@ -2,11 +2,14 @@
 //
 
 #include "XMLParser.h"
+#include "XMLFiles.h"
 #include <iostream>
 
 int main()
 {
-    XMLParser xmlParser("file.xml");
+    std::cout << "File name: " + std::string(XMLFiles::LEVEL_ONE) << std::endl;
+
+    XMLParser xmlParser(XMLFiles::LEVEL_ONE);
     xmlParser.parseData();
     std::cout << "Hello World!\n";
 }
