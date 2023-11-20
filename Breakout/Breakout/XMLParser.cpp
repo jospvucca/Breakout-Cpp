@@ -36,6 +36,8 @@ void XMLParser::parseData() {
 }
 
 void XMLParser::parseLevelData(const pugi::xml_node& root) {
+    std::cout << "---> Parsing Level data from root: " + std::string(root.name()) << std::endl;
+
     int rowCount = root.attribute(XMLTags::ROW_COUNT).as_int();
     int columnCount = root.attribute(XMLTags::COLUMN_COUNT).as_int();
     int rowSpacing = root.attribute(XMLTags::ROW_SPACING).as_int();
@@ -51,6 +53,8 @@ void XMLParser::parseLevelData(const pugi::xml_node& root) {
 }
 
 void XMLParser::parseBrickTypes(const pugi::xml_node& root) {
+    std::cout << "---> Parsing Level data from root: " + std::string(root.name()) << std::endl; //TODO change description
+
     pugi::xml_node brickTypesNode = root.child(XMLTags::BRICK_TYPES);
 
     for (pugi::xml_node brickType = brickTypesNode.child(XMLTags::BRICK_TYPE); brickType; brickType = brickType.next_sibling(XMLTags::BRICK_TYPE)) {
@@ -59,6 +63,8 @@ void XMLParser::parseBrickTypes(const pugi::xml_node& root) {
 }
 
 void XMLParser::parseBrickData(const pugi::xml_node& brickType) {
+    std::cout << "---> Parsing Level data from root: " + std::string(brickType.name()) << std::endl; //TODO change description
+
     std::string id = brickType.attribute(XMLTags::ID).as_string();
     std::string texture = brickType.attribute(XMLTags::TEXTURE).as_string();
     int hitPoints = brickType.attribute(XMLTags::HIT_POINTS).as_int();
@@ -76,6 +82,8 @@ void XMLParser::parseBrickData(const pugi::xml_node& brickType) {
 }
 
 void XMLParser::parsePositionData(const pugi::xml_node& root) {
+    std::cout << "---> Parsing Level data from root: " + std::string(root.name()) << std::endl; //TODO change description
+
     std::string bricksData = root.child_value(XMLTags::BRICK_PLACEMENT);
     std::cout << "Bricks Data: " << bricksData << std::endl;
 }
