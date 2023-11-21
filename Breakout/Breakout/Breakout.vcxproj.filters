@@ -28,6 +28,21 @@
     <Filter Include="Resource Files\Data">
       <UniqueIdentifier>{2a2b4b59-3d93-4cdd-b234-296d02d95e52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Domain">
+      <UniqueIdentifier>{0053ec05-e7fa-47f6-9d9b-6ff6b2b78122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Domain\Factory">
+      <UniqueIdentifier>{dd9c540f-069a-4e94-9020-eb60dc26ddb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Domain\Base">
+      <UniqueIdentifier>{e4abcc28-c2e1-4a2f-bc57-e1a1d8ce0353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain">
+      <UniqueIdentifier>{efdc9ac8-12af-4c9d-a7fa-9412fa42ee47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain\Factory">
+      <UniqueIdentifier>{bc7f3e16-71f2-44b4-9bb3-a77e8e868fb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +53,21 @@
     </ClCompile>
     <ClCompile Include="..\Libraries\pugixml-master\src\pugixml.cpp">
       <Filter>Header Files\PugiXML</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftBrick.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="MediumBrick.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="HardBrick.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpenetrableBrick.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="BrickFactory.cpp">
+      <Filter>Source Files\Domain\Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +85,24 @@
     </ClInclude>
     <ClInclude Include="XMLFiles.h">
       <Filter>Header Files\Consts</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>Header Files\Domain\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftBrick.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="MediumBrick.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="HardBrick.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpenetrableBrick.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="BrickFactory.h">
+      <Filter>Header Files\Domain\Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
