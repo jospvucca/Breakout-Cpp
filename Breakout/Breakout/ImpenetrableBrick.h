@@ -5,6 +5,7 @@
 #include "Brick.h"
 
 class ImpenetrableBrick : public Brick {
+	ImpenetrableBrick(const std::string& id, const std::string& texture, const std::string& hitSound);
 	void displayInfo() const override;
 };
 

@@ -5,6 +5,9 @@
 #include "Brick.h"
 
 class MediumBrick : public Brick {
+	MediumBrick(const std::string& id, const std::string& texture,
+		int hitpoints, const std::string& hitSound,
+		const std::string& breakSound, int breakScore);
 	void displayInfo() const override;
 };
 

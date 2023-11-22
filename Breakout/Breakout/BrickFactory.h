@@ -16,7 +16,7 @@ public:
 	std::unique_ptr<Brick> createBrick(const char brickId) const;
 
 private:
-	std::unordered_map<char, std::unique_ptr<Brick>> prototypes;
+	//std::unordered_map<char, std::unique_ptr<Brick>> prototypes;
 };
 
 #endif // !__BRICK_FACTORY_H__

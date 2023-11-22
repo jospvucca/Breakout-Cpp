@@ -131,9 +131,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\pugixml-master\src\pugixml.cpp" />
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickFactory.cpp" />
     <ClCompile Include="HardBrick.cpp" />
     <ClCompile Include="ImpenetrableBrick.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MediumBrick.cpp" />
     <ClCompile Include="SoftBrick.cpp" />
@@ -146,6 +148,7 @@
     <ClInclude Include="BrickFactory.h" />
     <ClInclude Include="HardBrick.h" />
     <ClInclude Include="ImpenetrableBrick.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="MediumBrick.h" />
     <ClInclude Include="SoftBrick.h" />
     <ClInclude Include="XMLFiles.h" />
