@@ -16,6 +16,10 @@ MediumBrick::MediumBrick(const std::string& id, const std::string& texture,
 	this->breakScore = breakPoints;
 }
 
+std::unique_ptr<Brick> MediumBrick::clone() const {
+	return std::make_unique<MediumBrick>(*this);
+}
+
 void MediumBrick::displayInfo() const {
 	std::cout << "Medium Brick info...(TODO)" << std::endl;
 }

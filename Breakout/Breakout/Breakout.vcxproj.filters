@@ -72,11 +72,17 @@
     <ClCompile Include="BrickFactory.cpp">
       <Filter>Source Files\Domain\Factory</Filter>
     </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>Source Files\Domain\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelConfig.cpp">
+      <Filter>Source Files\Domain\Base</Filter>
+    </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Brick.cpp">
-      <Filter>Source Files\Domain\Base</Filter>
+    <ClCompile Include="LevelFactory.cpp">
+      <Filter>Source Files\Domain\Factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,8 +119,14 @@
     <ClInclude Include="BrickFactory.h">
       <Filter>Header Files\Domain\Factory</Filter>
     </ClInclude>
+    <ClInclude Include="LevelConfig.h">
+      <Filter>Header Files\Domain\Base</Filter>
+    </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelFactory.h">
+      <Filter>Header Files\Domain\Factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

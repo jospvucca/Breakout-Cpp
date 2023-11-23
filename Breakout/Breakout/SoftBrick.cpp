@@ -16,6 +16,10 @@ SoftBrick::SoftBrick(const std::string& id, const std::string& texture,
 	this->breakScore = breakPoints;
 }
 
+std::unique_ptr<Brick> SoftBrick::clone() const {
+	return std::make_unique<SoftBrick>(*this);
+}
+
 void SoftBrick::displayInfo() const {
 	std::cout << "Soft Brick info...(TODO)" << std::endl;
 }

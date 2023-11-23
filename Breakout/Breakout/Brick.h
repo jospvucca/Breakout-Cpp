@@ -7,14 +7,15 @@
 
 class Brick {
 public:
-	~Brick() = default;
+	//~Brick() = default;
+	virtual std::unique_ptr<Brick> clone() const = 0;
 	virtual void displayInfo() const = 0;
-	virtual void onHit() const = 0;
-	virtual void onBreak() const = 0;
+	//virtual void onHit() const = 0;
+	//virtual void onBreak() const = 0;
 	//virtual int getHitpoints() const = 0;
 
-protected:
-	Brick();
+//protected:
+	Brick() = default;
 	Brick(const std::string& id, const std::string& texture,
 		const std::optional<int> hitpoints, const std::string& hitSound,
 		const std::optional<std::string> breakSound, const std::optional<int> breakScore);		//Should this be abstract?

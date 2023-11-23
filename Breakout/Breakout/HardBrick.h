@@ -5,9 +5,12 @@
 #include "Brick.h"
 
 class HardBrick : public Brick {
+public:
+	HardBrick() = default;
 	HardBrick(const std::string& id, const std::string& texture,
 		int hitpoints, const std::string& hitSound,
 		const std::string& breakSound, int breakScore);
+	std::unique_ptr<Brick> clone() const override;
 	void displayInfo() const override;
 };
 

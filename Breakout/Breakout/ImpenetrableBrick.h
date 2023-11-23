@@ -5,7 +5,10 @@
 #include "Brick.h"
 
 class ImpenetrableBrick : public Brick {
+public:
+	ImpenetrableBrick() = default;
 	ImpenetrableBrick(const std::string& id, const std::string& texture, const std::string& hitSound);
+	std::unique_ptr<Brick> clone() const override;
 	void displayInfo() const override;
 };
 

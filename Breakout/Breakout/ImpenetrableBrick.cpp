@@ -14,6 +14,10 @@ ImpenetrableBrick::ImpenetrableBrick(const std::string& id, const std::string& t
 	this->breakScore = std::nullopt;
 }
 
+std::unique_ptr<Brick> ImpenetrableBrick::clone() const {
+	return std::make_unique<ImpenetrableBrick>(*this);
+}
+
 void ImpenetrableBrick::displayInfo() const {
 	std::cout << "Impenetrable Brick info...(TODO)" << std::endl;
 }

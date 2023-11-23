@@ -136,6 +136,8 @@
     <ClCompile Include="HardBrick.cpp" />
     <ClCompile Include="ImpenetrableBrick.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelConfig.cpp" />
+    <ClCompile Include="LevelFactory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MediumBrick.cpp" />
     <ClCompile Include="SoftBrick.cpp" />
@@ -149,6 +151,8 @@
     <ClInclude Include="HardBrick.h" />
     <ClInclude Include="ImpenetrableBrick.h" />
     <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelConfig.h" />
+    <ClInclude Include="LevelFactory.h" />
     <ClInclude Include="MediumBrick.h" />
     <ClInclude Include="SoftBrick.h" />
     <ClInclude Include="XMLFiles.h" />

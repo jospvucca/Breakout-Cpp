@@ -16,6 +16,10 @@ HardBrick::HardBrick(const std::string& id, const std::string& texture,
 	this->breakScore = breakPoints;
 }
 
+std::unique_ptr<Brick> HardBrick::clone() const {
+	return std::make_unique<HardBrick>(*this);
+}
+
 void HardBrick::displayInfo() const {
 	std::cout << "---> Hard Brick info...(TODO)" << std::endl;
 }

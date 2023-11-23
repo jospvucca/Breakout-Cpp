@@ -1,8 +1,8 @@
 #include "Brick.h"
 
-Brick::Brick()
-{
-}
+//Brick::Brick()
+//{
+//}
 
 Brick::Brick(const std::string& id, const std::string& texture,
 	const std::optional<int> hitpoints, const std::string& hitSound,
