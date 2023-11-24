@@ -3,18 +3,19 @@
 #define __XML_PARSER_H__
 
 #include "../Libraries/pugixml-master/src/pugixml.hpp"
+#include "ParseData.h"
 
 class XMLParser {
 public:
 	XMLParser(const std::string fileName);
-	void parseData();
+	ParseData parseData();
 
 protected:
 	bool loadFile();
-	void parseLevelData(const pugi::xml_node& root);
-	void parseBrickTypes(const pugi::xml_node& root);
-	void parseBrickData(const pugi::xml_node& brickType);
-	void parsePositionData(const pugi::xml_node& root);
+	LevelData parseLevelData(const pugi::xml_node& root);
+	std::vector<BrickData> parseBrickTypes(const pugi::xml_node& root);
+	BrickData parseBrickData(const pugi::xml_node& brickType);
+	BrickPositioning parsePositionData(const pugi::xml_node& root);
 
 private:
 	pugi::xml_document document;

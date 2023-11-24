@@ -3,6 +3,7 @@
 
 #include "XMLParser.h"
 #include "XMLFiles.h"
+#include "LevelFactory.h"
 #include <iostream>
 
 int main()
@@ -10,7 +11,10 @@ int main()
     std::cout << "File name: " + std::string(XMLFiles::LEVEL_ONE) << std::endl;
 
     XMLParser xmlParser(XMLFiles::LEVEL_ONE);
-    xmlParser.parseData();
+    ParseData levelConfigData = xmlParser.parseData();
+
+    Level currentLevel = LevelFactory::createLevel(1);
+    
     std::cout << "Hello World!\n";
 }
 

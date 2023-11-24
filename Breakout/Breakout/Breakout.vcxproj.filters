@@ -128,6 +128,9 @@
     <ClInclude Include="LevelFactory.h">
       <Filter>Header Files\Domain\Factory</Filter>
     </ClInclude>
+    <ClInclude Include="ParseData.h">
+      <Filter>Header Files\Consts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resources\Input\Level1.xml">
