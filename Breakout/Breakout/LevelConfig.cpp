@@ -3,7 +3,7 @@
 
 LevelConfig::LevelConfig(const int levelNumber, const int rows, const int columns,
 	const int rowSpacing, const int columnSpacing,
-	const std::string backgroundTexture, const std::vector<std::vector<std::string>> matrixBrickLayout) {
+	const std::string backgroundTexture, const std::vector<std::vector<char>> matrixBrickLayout) {
 	std::cout << "---> LevelConfig::ctor ---> For level: " + std::to_string(levelNumber) + ", RowCount: " + std::to_string(rows) + ", ColumnCount: " + std::to_string(columns) +
 		", RowSpacing: " + std::to_string(rowSpacing) + ", ColumnSpacing: " + std::to_string(columnSpacing) +
 		", BackgroundTexture: " + backgroundTexture + ", Brick Layout: (TODO!) "<< std::endl;

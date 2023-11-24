@@ -6,7 +6,7 @@
 
 class Level {
 public:
-	Level();	//just for testing
+	std::unique_ptr<Level> instantiate(const LevelConfig& levelConfig);
 private:
 	Level(const LevelConfig& levelConfig);
 	const LevelConfig config;

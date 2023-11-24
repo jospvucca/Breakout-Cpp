@@ -10,10 +10,14 @@ int main()
 {
     std::cout << "File name: " + std::string(XMLFiles::LEVEL_ONE) << std::endl;
 
+    int levelCounter = 1;
+
     XMLParser xmlParser(XMLFiles::LEVEL_ONE);
     ParseData levelConfigData = xmlParser.parseData();
+    LevelConfig config = LevelConfig(levelCounter, levelConfigData.level.rowCount, levelConfigData.level.columnCount,
+        levelConfigData.level.rowSpacing, levelConfigData.level.columnSpacing, levelConfigData.level.backgroundTexture, levelConfigData.positions.brickPositions);
 
-    Level currentLevel = LevelFactory::createLevel(1);
+    std::unique_ptr<Level> currentLevel = LevelFactory::createLevelFromConfig(1, config);
     
     std::cout << "Hello World!\n";
 }

@@ -10,7 +10,7 @@ class LevelConfig {
 public:
 	LevelConfig(const int levelNumber, const int rows, const int columns, 
 		const int rowSpacing, const int columnSpacing,
-		const std::string backgroundTexture, const std::vector<std::vector<std::string>> matrixBrickLayout);
+		const std::string backgroundTexture, const std::vector<std::vector<char>> matrixBrickLayout);
 	const std::string ToString() const;
 private:
 	int number;		//Defining what level is loaded

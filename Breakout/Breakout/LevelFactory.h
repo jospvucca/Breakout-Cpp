@@ -6,7 +6,8 @@
 
 class LevelFactory {
 public:
-	static Level createLevel(const int levelNumber);
+	//static Level createLevel(const int levelNumber);
+	static std::unique_ptr<Level> createLevelFromConfig(const int levelNumber, const LevelConfig& config);
 	//Load etc methods
 };
 

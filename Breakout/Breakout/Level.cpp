@@ -1,10 +1,11 @@
 #include "Level.h"
 
-//just for testing
-Level::Level() : config(1, 1, 1, 1, 1, "", std::vector<std::vector<std::string>>()) {
-
-}
-
 Level::Level(const LevelConfig& levelConfig) : config(levelConfig) {
 	std::cout << "---> Level::ctor(" + levelConfig.ToString() + ".)" << std::endl;
+}
+
+std::unique_ptr<Level> Level::instantiate(const LevelConfig& levelConfig) {
+	std::cout << "---> Level::instantiate ---> Creating instance with config: " + levelConfig.ToString() << std::endl;
+	return std::make_unique<Level>(Level(levelConfig));
+	//return std::make_unique<Level>(levelConfig);
 }
