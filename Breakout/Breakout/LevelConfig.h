@@ -12,6 +12,7 @@ public:
 		const int rowSpacing, const int columnSpacing,
 		const std::string backgroundTexture, const std::vector<std::vector<char>> matrixBrickLayout);
 	const std::string ToString() const;
+	std::string LevelConfigstringifyMatrix(const std::vector<std::vector<char>>& matrix);
 private:
 	int number;		//Defining what level is loaded
 	int rowCount;

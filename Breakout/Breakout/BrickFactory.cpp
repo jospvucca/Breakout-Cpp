@@ -6,10 +6,17 @@
 * Add console logs for everything implemented tonight.
 */
 
+BrickFactory* BrickFactory::instance = nullptr;
 
+BrickFactory& BrickFactory::getInstance() {
+	std::cout << "---> BrickFactory::getInstance ---> returning Singleton BrickFactory." << std::endl;
+	if (instance != nullptr) {
+		std::cout << "---> Instance of a BrickFactory does not exist. Creating new BrickFactory..." << std::endl;
+		instance = new BrickFactory();
+	}
 
-
-
+	return *instance;
+}
 
 BrickFactory::BrickFactory() {
 	std::cout << "---> BrickFactory::ctor ---> Adding Brick prototypes..." << std::endl;
@@ -31,4 +38,9 @@ std::unique_ptr<Brick> BrickFactory::createBrick(const char brickId) const {		//
 
 	std::cout << "---> BrickFactory::createBrick ---! Error creating a brick. Could not find brick by id: " + brickId << std::endl;
 	return nullptr;
+}
+
+BrickFactory::~BrickFactory() {
+	std::cout << "---> BrickFactory::~BrickFactory ---> Destroying BrickFactory instance..." << std::endl;
+	delete instance;
 }

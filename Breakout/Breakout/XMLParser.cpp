@@ -3,6 +3,8 @@
 #include <iostream>
 #include <sstream>
 #include <filesystem>
+#include <string>
+#include <algorithm>
 
 XMLParser::XMLParser(const std::string fileName) : fileName(fileName)
 {
@@ -122,6 +124,9 @@ BrickPositioning XMLParser::parsePositionData(const pugi::xml_node& root) {
 
     std::vector<std::vector<char>> brickPositions = std::vector<std::vector<char>>();
  
+    //Remove spaces
+    bricksData.erase(std::remove(bricksData.begin(), bricksData.end(), ' '), bricksData.end());
+
     std::istringstream iss(bricksData);
     std::string line;
     while (std::getline(iss, line)) {

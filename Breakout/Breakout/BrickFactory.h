@@ -12,10 +12,14 @@
 //TODO - decide on singleton option
 class BrickFactory {
 public:
-	BrickFactory();
+	static BrickFactory& getInstance();
 	std::unique_ptr<Brick> createBrick(const char brickId) const;
 
 private:
+	BrickFactory();
+	~BrickFactory();
+
+	static BrickFactory* instance;
 	std::unordered_map<char, std::unique_ptr<Brick>> prototypes;
 };
 
