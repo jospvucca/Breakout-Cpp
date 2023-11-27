@@ -35,8 +35,8 @@ LevelConfig::LevelConfig(const int levelNumber, const int rows, const int column
 
 
 			//TODO this issue still persists
-
-
+			char brickId = inlineBrickVector.at(c);
+			std::cout << "Creating Brick with id: " << brickId << std::endl;
 			inlineBrickResult.emplace_back((brickFactory.createBrick(inlineBrickVector.at(c))));
 		}
 		//bricksMatrix.emplace_back(std::make_move_iterator(inlineBrickResult.begin()), std::make_move_iterator(inlineBrickResult.end()));

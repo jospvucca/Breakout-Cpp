@@ -10,7 +10,7 @@ BrickFactory* BrickFactory::instance = nullptr;
 
 BrickFactory& BrickFactory::getInstance() {
 	std::cout << "---> BrickFactory::getInstance ---> returning Singleton BrickFactory." << std::endl;
-	if (instance != nullptr) {
+	if (instance == nullptr) {
 		std::cout << "---> Instance of a BrickFactory does not exist. Creating new BrickFactory..." << std::endl;
 		instance = new BrickFactory();
 	}
@@ -26,7 +26,7 @@ BrickFactory::BrickFactory() {
 	prototypes['I'] = std::make_unique<ImpenetrableBrick>();
 }
 
-std::unique_ptr<Brick> BrickFactory::createBrick(const char brickId) const {		//Not sure if its char& or char
+std::unique_ptr<Brick> BrickFactory::createBrick(const char& brickId) {		//Not sure if its char& or char
 	std::cout << "---> BrickFactory::createBrick ---> Creating Brick with id: " + brickId << std::endl;
 	
 	auto it = prototypes.find(brickId);

@@ -13,7 +13,7 @@
 class BrickFactory {
 public:
 	static BrickFactory& getInstance();
-	std::unique_ptr<Brick> createBrick(const char brickId) const;
+	std::unique_ptr<Brick> createBrick(const char& brickId);
 
 private:
 	BrickFactory();
