@@ -11,7 +11,7 @@ BrickFactory* BrickFactory::instance = nullptr;
 BrickFactory& BrickFactory::getInstance() {
 	std::cout << "---> BrickFactory::getInstance ---> returning Singleton BrickFactory." << std::endl;
 	if (instance == nullptr) {
-		std::cout << "---> Instance of a BrickFactory does not exist. Creating new BrickFactory..." << std::endl;
+		std::cout << "---> BrickFactory::getInstance() ---> Instance of a BrickFactory does not exist. Creating new BrickFactory..." << std::endl;
 		instance = new BrickFactory();
 	}
 

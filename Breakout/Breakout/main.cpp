@@ -5,11 +5,13 @@
 #include "XMLFiles.h"
 #include "LevelFactory.h"
 #include <iostream>
-#include <Sdl.h>
+#include "Game.h"
+#include "Window.h"
+
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+//const int SCREEN_WIDTH = 640;
+//const int SCREEN_HEIGHT = 480;
 
 int main(int argc, char* args[])
 {
@@ -34,6 +36,7 @@ int main(int argc, char* args[])
     std::unique_ptr<Level> currentLevel = LevelFactory::createLevelFromConfig(1, config);
     
     std::cout << "Hello World!\n";
+
 	//SDL_QUIT();
 	return 0;
 }
