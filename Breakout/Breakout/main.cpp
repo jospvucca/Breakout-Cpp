@@ -13,9 +13,14 @@ const int SCREEN_HEIGHT = 480;
 
 int main(int argc, char* args[])
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Window* window = SDL_CreateWindow("Breakout", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 600, 400, SDL_WINDOW_SHOWN);
 
-	//The window we'll be rendering to
-	SDL_Window* window = NULL;
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 0);
+	SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+	SDL_RenderClear(renderer);
+	SDL_RenderPresent(renderer);
+	SDL_Delay(3000);
 
     std::cout << "File name: " + std::string(XMLFiles::LEVEL_ONE) << std::endl;
 
