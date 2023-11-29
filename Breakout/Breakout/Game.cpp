@@ -56,10 +56,20 @@ void Game::loadScene(std::unique_ptr<Scene> newScene) {
 	}
 
 	this->scene = std::move(newScene);
+	//TODO - change state
 	//TODO - call scene method for starting
 }
 
-int Game::run() {
-	std::cout << "---> Game::run() ---> TODO" << std::endl;
+int Game::update() {
+	std::cout << "---> Game::update() ---> TODO" << std::endl;
+
+	if (this->state != State::INITED) {
+		std::cerr << "---! Game::update() ---! Error while running the game. Current state id: " + (int)state << std::endl;
+	}
+
+	while (this->state == State::RUNNING) {
+
+	}
+
 	return 1;
 }
