@@ -163,7 +163,9 @@
     <ClInclude Include="LevelFactory.h" />
     <ClInclude Include="MediumBrick.h" />
     <ClInclude Include="ParseData.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SoftBrick.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="XMLFiles.h" />
     <ClInclude Include="XMLParser.h" />

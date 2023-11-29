@@ -10,7 +10,7 @@
 #include <unordered_map>
 
 //TODO - decide on singleton option
-class BrickFactory {
+class BrickFactory final {
 public:
 	static BrickFactory& getInstance();
 	std::unique_ptr<Brick> createBrick(const char& brickId);

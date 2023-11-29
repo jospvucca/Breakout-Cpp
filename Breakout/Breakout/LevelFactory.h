@@ -4,7 +4,7 @@
 
 #include "Level.h"
 
-class LevelFactory {
+class LevelFactory final {
 public:
 	//static Level createLevel(const int levelNumber);
 	static std::unique_ptr<Level> createLevelFromConfig(const int levelNumber, const LevelConfig& config);

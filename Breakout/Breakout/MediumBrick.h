@@ -4,7 +4,7 @@
 
 #include "Brick.h"
 
-class MediumBrick : public Brick {
+class MediumBrick final : public Brick {
 public:
 	MediumBrick() = default;
 	MediumBrick(const std::string& id, const std::string& texture,

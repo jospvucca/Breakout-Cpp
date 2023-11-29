@@ -4,7 +4,7 @@
 
 #include "Brick.h"
 
-class ImpenetrableBrick : public Brick {
+class ImpenetrableBrick final : public Brick {
 public:
 	ImpenetrableBrick() = default;
 	ImpenetrableBrick(const std::string& id, const std::string& texture, const std::string& hitSound);

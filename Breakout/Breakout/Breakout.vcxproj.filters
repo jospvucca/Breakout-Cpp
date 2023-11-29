@@ -52,6 +52,9 @@
     <Filter Include="Source Files\Engine">
       <UniqueIdentifier>{450963bc-ed26-4acc-9e35-7bd843f374b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Base">
+      <UniqueIdentifier>{00616fb2-47d0-4ea3-8c90-4fe35e291329}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -148,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\Consts</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Engine\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

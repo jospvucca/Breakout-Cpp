@@ -5,7 +5,7 @@
 #include "../Libraries/pugixml-master/src/pugixml.hpp"
 #include "ParseData.h"
 
-class XMLParser {
+class XMLParser final {
 public:
 	XMLParser(const std::string fileName);
 	ParseData parseData();

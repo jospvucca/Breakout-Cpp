@@ -4,7 +4,7 @@
 
 #include "Brick.h"
 
-class SoftBrick : public Brick {
+class SoftBrick final : public Brick {
 public:
 	SoftBrick() = default;
 	SoftBrick(const std::string& id, const std::string& texture,

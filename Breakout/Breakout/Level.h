@@ -4,7 +4,7 @@
 
 #include "LevelConfig.h"
 
-class Level {
+class Level final {
 public:
 	std::unique_ptr<Level> instantiate(const LevelConfig& levelConfig);
 private:
