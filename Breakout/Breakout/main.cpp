@@ -7,6 +7,7 @@
 #include <iostream>
 #include "Game.h"
 #include "Window.h"
+#include "IntroScene.h"
 
 
 //Screen dimension constants
@@ -37,7 +38,9 @@ int main(int argc, char* args[])
     
     std::cout << "Hello World!\n";
 
+	IntroScene scene = IntroScene();
 	Game game = Game(600, 480, "nullptr", "Breakout");
+	game.loadScene(std::make_unique<IntroScene>(scene));
 	return game.update();
 }
 

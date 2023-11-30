@@ -56,7 +56,7 @@ void Game::loadScene(std::unique_ptr<Scene> newScene) {
 	}
 
 	this->scene = std::move(newScene);
-	//TODO - change state
+	//state = State::RUNNING;
 	//TODO - call scene method for starting
 }
 
@@ -65,11 +65,37 @@ int Game::update() {
 
 	if (this->state != State::INITED) {
 		std::cerr << "---! Game::update() ---! Error while running the game. Current state id: " + (int)state << std::endl;
+		return -1;
+	}
+
+	SDL_Event event;
+	if (this->state == State::INITED) {
+		std::cout << "---> Game::update() ---> Initializing start() part of the loop." << std::endl;
+
+
+		loadScene(std::move(this->scene));
+		state = State::RUNNING;
+
 	}
 
 	while (this->state == State::RUNNING) {
+		while (SDL_PollEvent(&event) != 0) {
+			switch (event.type) {
+			case SDL_QUIT:
+				state = State::STOPPED;
+				break;
+			default:
+				std::cout << "---> Game::update() ---> Event happened: " + std::string(event.text.text) << std::endl;
+				break;
+			}
+		}
 
+		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+		SDL_RenderClear(renderer);
+
+		scene->render();
+		SDL_RenderPresent(renderer);
 	}
 
-	return 1;
+	return 0;
 }
