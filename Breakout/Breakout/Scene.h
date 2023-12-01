@@ -2,9 +2,10 @@
 #ifndef __SCENE_H__
 #define __SCENE_H__
 
-#include "Game.h"
 #include <SDL.h>
 #include <iostream>
+
+class Game;
 
 class Scene {
 public:
@@ -22,7 +23,7 @@ public:
 
 	int name;	//should be string or not exist
 
-protected:
+//protected:
 	Game& game;
 };
 

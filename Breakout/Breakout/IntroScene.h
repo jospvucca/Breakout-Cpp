@@ -3,10 +3,12 @@
 #define __INTRO_SCENE_H__
 
 #include "Scene.h"
+#include "Game.h"
 
 class IntroScene final : public Scene {
 public:
-	IntroScene();
+	IntroScene() = default;
+	IntroScene(Game& game);
 	~IntroScene();
 
 	void update(float dt) const override;
@@ -17,6 +19,19 @@ public:
 	void onKeyDown(SDL_KeyboardEvent& event) const override;
 
 private:
+    SDL_Texture* nameText;
+    SDL_Texture* controlsText;
+    SDL_Texture* spacebarText;
+    SDL_Texture* leftArrowText;
+    SDL_Texture* rightArrowText;
+    SDL_Texture* playerGameText;
+
+    SDL_Rect nameTextPosition;
+    SDL_Rect controlsTextPosition;
+    SDL_Rect spacebarTextPosition;
+    SDL_Rect leftArrowTextPosition;
+    SDL_Rect rightArrowTextPosition;
+    SDL_Rect playerGameTextPosition;
 };
 
 #endif // !__INTRO_SCENE_H__

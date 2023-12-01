@@ -109,13 +109,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\include;C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\SDL2_ttf-2.0.12\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\lib\x64;C:\Users\JV\Documents\GitHub\Breakout\Breakout-Cpp\Breakout\Libraries\SDL2-2.28.5\SDL2_ttf-2.0.12\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,8 +136,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Libraries\pugixml-master\src\pugixml.cpp" />
+    <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickFactory.cpp" />
+    <ClCompile Include="Calculate.cpp" />
     <ClCompile Include="Collidable.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -150,6 +152,8 @@
     <ClCompile Include="LevelScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MediumBrick.cpp" />
+    <ClCompile Include="Movable.cpp" />
+    <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="SoftBrick.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="XMLParser.cpp" />
@@ -157,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Libraries\pugixml-master\src\pugiconfig.hpp" />
     <ClInclude Include="..\..\Libraries\pugixml-master\src\pugixml.hpp" />
+    <ClInclude Include="Ball.h" />
     <ClInclude Include="Brick.h" />
     <ClInclude Include="BrickFactory.h" />
     <ClInclude Include="Collidable.h" />
@@ -170,7 +175,9 @@
     <ClInclude Include="LevelFactory.h" />
     <ClInclude Include="LevelScene.h" />
     <ClInclude Include="MediumBrick.h" />
+    <ClInclude Include="Movable.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Paddle.h" />
     <ClInclude Include="ParseData.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SoftBrick.h" />
@@ -182,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resources\Input\Level1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Assets\Fonts\LTCushion-Black.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

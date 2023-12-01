@@ -5,6 +5,7 @@
 #include "Game.h"
 #include <SDL.h>
 
+//TODO - change name to GameObject
 class Object {
 public:
 	Object(Game& gameRef) : game(gameRef), rect({ 0, 0, 0, 0 }) {}

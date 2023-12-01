@@ -55,6 +55,15 @@
     <Filter Include="Header Files\Engine\Base">
       <UniqueIdentifier>{00616fb2-47d0-4ea3-8c90-4fe35e291329}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Engine\Utils">
+      <UniqueIdentifier>{5e8a63f0-cfe6-434a-85e6-f39802d15cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assets">
+      <UniqueIdentifier>{b52abf4d-356c-4ea3-8dee-81762c1b83e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Assets\Fonts">
+      <UniqueIdentifier>{f0b3fe77-4b8c-4844-91c1-6827c2121a07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -110,6 +119,18 @@
     </ClCompile>
     <ClCompile Include="LevelScene.cpp">
       <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Movable.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Source Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculate.cpp">
+      <Filter>Source Files\Engine\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -185,10 +206,24 @@
     <ClInclude Include="Collidable.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
+    <ClInclude Include="Movable.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Resources\Input\Level1.xml">
       <Filter>Resource Files\Data</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Resources\Assets\Fonts\LTCushion-Black.ttf">
+      <Filter>Resource Files\Assets\Fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>
