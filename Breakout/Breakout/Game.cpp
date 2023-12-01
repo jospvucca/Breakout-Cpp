@@ -3,8 +3,6 @@
 #include <iostream>
 #include <string>
 #include <chrono>
-//#include <cstdlib>
-//#include <ctime>
 
 //TODO - move this method as static to Calculate.cpp with <chrono>
 inline unsigned long currentMillis() {
@@ -157,7 +155,7 @@ int Game::update() {
 SDL_Texture* Game::createText(const std::string& text)
 {
 	// create a surface which contains the desired text.
-	SDL_Color color{ 0xff, 0xff, 0xff, 0xff };
+	SDL_Color color{ 0xbb, 0xbb, 0xbb, 0xff };
 	auto surface = TTF_RenderText_Blended(font, text.c_str(), color);
 	if (surface == nullptr) {
 		std::cerr << "Unable to create a surface with a text: " << TTF_GetError() << std::endl;

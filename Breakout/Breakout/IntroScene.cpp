@@ -35,6 +35,14 @@ IntroScene::IntroScene(Game& game) :
 	int windowCenterY = windowHeight / 2;
 
 	//TODO - align text in center
+	  // assign texts at the center of the screen.
+	#define CENTER(rect) (rect.x = windowCenterX - (rect.w / 2));
+	CENTER(nameTextPosition);
+
+
+	// assign vertical positions for each texture.
+	int slotHeight = (windowHeight / 10);
+	nameTextPosition.y = slotHeight;
 }
 
 IntroScene::~IntroScene() {
@@ -48,6 +56,16 @@ void IntroScene::update(float dt) const {
 
 void IntroScene::render() const {
 	//std::cout << "---> IntroScene::render ---> TODO" << std::endl;
+	  // get a reference to the SDL renderer.
+	auto& renderer = game.getRenderer();
+
+	// draw all texts on the buffer.
+	SDL_RenderCopy(&renderer, nameText, nullptr, &nameTextPosition);
+	SDL_RenderCopy(&renderer, controlsText, nullptr, &controlsTextPosition);
+	SDL_RenderCopy(&renderer, spacebarText, nullptr, &spacebarTextPosition);
+	SDL_RenderCopy(&renderer, leftArrowText, nullptr, &leftArrowTextPosition);
+	SDL_RenderCopy(&renderer, rightArrowText, nullptr, &rightArrowTextPosition);
+	SDL_RenderCopy(&renderer, playerGameText, nullptr, &playerGameTextPosition);
 }
 
 void IntroScene::enter() const {

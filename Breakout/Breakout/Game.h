@@ -12,13 +12,13 @@ class Game final {  //TODO - create game a singleton type with method start(getI
 public:
     Game() = delete;
     Game(const Game&) = delete;     //TODO - forgot to add copy const delete variance and operator = to singletons and others that should not be created that way
+    Game(Game&&) = delete;
     Game& operator=(const Game&) = delete;
     Game& operator=(Game&&) = delete;
 
-    Game(const int width, const int height, const char* fontPath, const char* title);       //TODO - dont think font is necessary, this can be changed to only title
+    Game(const int width, const int height, const char* fontPath, const char* title);
 	~Game();
 
-    // - Logic related methods
     void loadScene(std::shared_ptr<Scene> scene);
     SDL_Renderer& getRenderer() const { return *renderer; }
     SDL_Window* getWindow() const { return window; }
