@@ -11,12 +11,12 @@ public:
 	IntroScene(Game& game);
 	~IntroScene();
 
-	void update(float dt) const override;
+	void update(float dt) override;
 	void render() const override;
 	void enter() const override;
 	void exit() const override;
-	void onKeyUp(SDL_KeyboardEvent& event) const override;
-	void onKeyDown(SDL_KeyboardEvent& event) const override;
+	void onKeyUp(SDL_KeyboardEvent& event) override;
+	void onKeyDown(SDL_KeyboardEvent& event) override;
 
 private:
     SDL_Texture* nameText;

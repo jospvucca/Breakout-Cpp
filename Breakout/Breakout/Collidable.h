@@ -17,18 +17,28 @@ public:
 	void setHeight(const int h) override;
 
 	const bool isEnabled() const {}
+	const int getExtendedX() const { return extendedX; }
+	const int getExtendedY() const { return extendedY; }
 	const int getCollisionBoxX() const { return cbX; }
 	const int getCollisionBoxY() const { return cbY; }
-	//TODO add field for center and getters and setters
 
 	void setEnabled(const bool isEnabled) { enabled = isEnabled; }
+	void setExtendedX(const int x) { extendedX = x; }
+	void setExtendedY(const int y) { extendedY = y; }
 	void setCollisionBoxX(const int x) { cbX = x; }
 	void setCollisionBoxY(const int y) { cbY = y; }
 
-private:
-	bool enabled;
+protected:
+
+	int extendedX;
+	int extendedY;
+
 	int cbX;
 	int cbY;
+
+private:
+	bool enabled;
+
 };
 
 #endif // !__COLLIDABLE_H__

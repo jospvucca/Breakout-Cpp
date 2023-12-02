@@ -13,13 +13,13 @@ public:
 	Scene(Game& game) : game(game) {};
 	virtual ~Scene() = default;
 
-	virtual void update(float dt) const = 0;
+	virtual void update(float dt) = 0;
 	virtual void render() const = 0;
 	virtual void enter() const = 0;
 	virtual void exit() const = 0;
 	
-	virtual void onKeyDown(SDL_KeyboardEvent& event) const {};
-	virtual void onKeyUp(SDL_KeyboardEvent& event) const = 0;
+	virtual void onKeyDown(SDL_KeyboardEvent& event) {};
+	virtual void onKeyUp(SDL_KeyboardEvent& event) = 0;
 
 	int name;	//should be string or not exist
 

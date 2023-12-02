@@ -38,20 +38,48 @@ IntroScene::IntroScene(Game& game) :
 	  // assign texts at the center of the screen.
 	#define CENTER(rect) (rect.x = windowCenterX - (rect.w / 2));
 	CENTER(nameTextPosition);
+	CENTER(controlsTextPosition);
+	CENTER(spacebarTextPosition);
+	CENTER(leftArrowTextPosition);
+	CENTER(rightArrowTextPosition);
+	CENTER(playerGameTextPosition);
 
 
 	// assign vertical positions for each texture.
 	int slotHeight = (windowHeight / 10);
 	nameTextPosition.y = slotHeight;
+	controlsTextPosition.y = static_cast<int>(2.5 * slotHeight);
+	spacebarTextPosition.y = (3 * slotHeight);
+	leftArrowTextPosition.y = static_cast<int>(3.5 * slotHeight);
+	rightArrowTextPosition.y = (4 * slotHeight);
+	playerGameTextPosition.y = (6 * slotHeight);
 }
 
 IntroScene::~IntroScene() {
 	std::cout << "---> IntroScene::~IntroScene ---> Destroying Intro Scene." << std::endl;
-	//TODO - destroy textures connected to the scene
+	
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(nameText);
+	}
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(controlsText);
+	}
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(spacebarText);
+	}
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(leftArrowText);
+	}
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(rightArrowText);
+	}
+	if (nameText != nullptr) {
+		SDL_DestroyTexture(playerGameText);
+	}
 }
 
-void IntroScene::update(float dt) const {
-	std::cout << "---> IntroScene::update ---> TODO" << std::endl;
+void IntroScene::update(float dt) {
+	//std::cout << "---> IntroScene::update ---> TODO" << std::endl;
 }
 
 void IntroScene::render() const {
@@ -77,7 +105,7 @@ void IntroScene::exit() const {
 }
 
 //TODO - it should probably be better to have GameStateManager with KeyInputManager as parents to game, so when in update of game a key is pressed, it doesnt call this method but method in managers, and it loads a new scene
-void IntroScene::onKeyUp(SDL_KeyboardEvent& event) const {
+void IntroScene::onKeyUp(SDL_KeyboardEvent& event) {
 	std::cout << "---> IntroScene::onKeyUp ---> Key event happened: " + event.keysym.sym << std::endl;
 
 	//TODO - refine logic for key presses, for now only load new scene
@@ -93,6 +121,6 @@ void IntroScene::onKeyUp(SDL_KeyboardEvent& event) const {
 	}
 }
 
-void IntroScene::onKeyDown(SDL_KeyboardEvent& event) const {
+void IntroScene::onKeyDown(SDL_KeyboardEvent& event) {
 
 }

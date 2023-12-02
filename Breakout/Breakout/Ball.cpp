@@ -22,5 +22,5 @@ void Ball::reset() {
 }
 
 void Ball::update(float dt) {
-	std::cout << "---> Ball::update ---> TODO." << std::endl;
+	//std::cout << "---> Ball::update ---> TODO." << std::endl;
 }
