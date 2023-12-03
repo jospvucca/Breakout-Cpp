@@ -9,7 +9,8 @@ inline unsigned long currentMillis() {
 	return static_cast<unsigned long>(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count());
 }
 
-Game::Game(const int width, const int height, const char* fontPath, const char* title) : 
+//TODO - use LevelFactory and Config
+Game::Game(const int width, const int height, const char* fontPath, const char* title, const LevelConfig& levelConfig) : 
 	window(nullptr),		//TODO - change to singleton type method getInstance()
 	renderer(nullptr),		//TODO - same
 	scene(nullptr),

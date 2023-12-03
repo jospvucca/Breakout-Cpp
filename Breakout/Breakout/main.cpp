@@ -39,7 +39,7 @@ int main(int argc, char* args[])
     std::unique_ptr<Level> currentLevel = LevelFactory::createLevelFromConfig(1, config);
     
     std::cout << "Hello World!\n";
-	Game game = Game(800, 950, (std::filesystem::current_path().append("Resources\\Assets\\Fonts\\LTCushion-Black.ttf").string()).c_str(), "Brick Breaker");
+	Game game = Game(800, 950, (std::filesystem::current_path().append("Resources\\Assets\\Fonts\\LTCushion-Black.ttf").string()).c_str(), "Brick Breaker", levelConfigData);
 	//IntroScene scene = IntroScene(game);
 	//game.loadScene(std::make_shared<IntroScene>(scene));
 	return game.update();

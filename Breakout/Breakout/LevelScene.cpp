@@ -17,7 +17,8 @@ LevelScene::LevelScene(Game& game) :
 	topWall(game),
 	ball(game),
 	paddle(game),
-	outOfBoundsArea(game) {
+	outOfBoundsArea(game)
+	/*TODO add bricks and rules from levelFactory*/{
 	std::cout << "---> LevelScene::ctor(game) ----> Creating LevelScene." << std::endl;
 
 	//Retriving window size from game
@@ -69,6 +70,13 @@ LevelScene::LevelScene(Game& game) :
 	outOfBoundsArea.setY(windowHeight + slotHeight);
 	outOfBoundsArea.setWidth(windowWidth);
 	outOfBoundsArea.setHeight(1000);	//Can be whatever
+
+
+
+	/*
+	TESTING BRICKS IMPORT WITH OTHER PARAMETERS
+	*/
+
 }
 
 LevelScene::~LevelScene() {
