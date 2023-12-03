@@ -1,7 +1,7 @@
 #include "LevelScene.h"
-
-#define SLOT_WIDTH 16		//TODO - This should be revisited once we have number of bricks in a row
-#define SLOT_HEIGHT 45
+//
+//#define SLOT_WIDTH 16		//TODO - This should be revisited once we have number of bricks in a row
+//#define SLOT_HEIGHT 45
 
 
 // The divisor of the slot width related to window client area width.

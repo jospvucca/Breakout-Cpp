@@ -12,7 +12,12 @@ public:
 	void reset();
 	void update(float dt);
 
+	void increaseVelocity(float v);
+	float getInitialVelocity() const { return initialVelocity; }
 
+private:
+	float initialVelocity;
+	float incrementVelocity;
 };
 
 #endif // !__BALL_H__

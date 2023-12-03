@@ -18,8 +18,16 @@ bool Collidable::onCollision(const Collidable& other) const {
 		return false;
 	}
 
-	auto x = std::abs(cbX - other.cbX) < (extendedX + other.extendedX);
-	auto y = std::abs(cbY - other.cbY) < (extendedX + other.extendedY);
+	//auto test1 = cbX;
+	//auto test2 = other.cbX;
+	//auto test3 = cbX - other.cbX;
+	//auto test4 = extendedX;
+	//auto test5 = other.extendedX;
+	//auto test6 = test4 + test5;
+
+	bool x = std::abs(cbX - other.cbX) < (extendedX + other.extendedX);
+	bool y = std::abs(cbY - other.cbY) < (extendedY + other.extendedY);
+
 	return x && y;
 }
 

@@ -39,7 +39,7 @@ void Paddle::update(float dt) {
 	else if (directionX > 0.0f) {
 		const Collidable& rightWall = scene->getRightWall();
 		if (rightWall.onCollision(*this)) {
-			rect.x = rightWall.getX() + rightWall.getExtendedX() * 2;
+			rect.x = rightWall.getX() - this->extendedX * 2;
 			cbX = rect.x + extendedX;
 		}
 	}
