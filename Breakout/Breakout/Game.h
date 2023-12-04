@@ -7,7 +7,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <iostream>
-#include "LevelFactory.h"
+#include "LevelConfig.h"
 
 class Game final {  //TODO - create game a singleton type with method start(getInstance), possibly static with scene as main guy with additional class with window/renderer(my idea is thats how game engines work behind the scenes) - but i wont have time probably
 public:
@@ -28,7 +28,7 @@ public:
 
     SDL_Texture* createText(const std::string& text);
 
-    //const std::unique_ptr<Level> getLevel() { return std::move(level); }
+    const LevelConfig getLevelConfig() const { return std::move(levelConfig); }
 
 private:
     SDL_Window* window;     //TODO - This and renderer should def be singletons, ensure in later stages of development
@@ -42,7 +42,7 @@ private:
     unsigned long previousTickMillis;
     unsigned long deltaTime;
 
-    //std::unique_ptr<Level> level;
+    LevelConfig levelConfig;
 };
 
 #endif // !__GAME_H__

@@ -21,3 +21,7 @@ std::unique_ptr<Brick> ImpenetrableBrick::clone() const {
 void ImpenetrableBrick::displayInfo() const {
 	std::cout << "Impenetrable Brick info...(TODO)" << std::endl;
 }
+
+void ImpenetrableBrick::createCollidable(int x, int y, int w, int h, SDL_Color&& color) {
+	std::cout << "---> ImpenetrableBrick::createCollidable ---> Creating visual data for ImpenetrableBrick..." << std::endl;
+}

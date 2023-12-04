@@ -10,6 +10,8 @@ public:
 	ImpenetrableBrick(const std::string& id, const std::string& texture, const std::string& hitSound);
 	std::unique_ptr<Brick> clone() const override;
 	void displayInfo() const override;
+
+	void createCollidable(int x, int y, int w, int h, SDL_Color&& color) override;
 };
 
 #endif // !__IMPENETRABLE_BRICK_H__

@@ -37,11 +37,12 @@ LevelConfig::LevelConfig(const int levelNumber, const int rows, const int column
 			//TODO this issue still persists
 			char brickId = inlineBrickVector.at(c);
 			std::cout << "Creating Brick with id: " << brickId << std::endl;
-			inlineBrickResult.emplace_back((brickFactory.createBrick(inlineBrickVector.at(c))));
+			inlineBrickResult.emplace_back(brickFactory.createBrick(inlineBrickVector.at(c)));
 		}
 		//bricksMatrix.emplace_back(std::make_move_iterator(inlineBrickResult.begin()), std::make_move_iterator(inlineBrickResult.end()));
 	}
 
+	//std::cout << "---> LevelConfig::ctor ---> Successfully created: " + std::to_string()
 	std::cout << "---> LevelConfig::ctor ---> Successfully created LevelConfig: " + this->ToString() << std::endl;
 }
 
@@ -66,4 +67,39 @@ std::string LevelConfig::LevelConfigstringifyMatrix(const std::vector<std::vecto
 	}
 
 	return result;
+}
+
+const int LevelConfig::getNumber() const {
+	std::cout << "---> LevelConfig::getNumber ---> Returning Level number: " + number << std::endl;
+	return number;
+}
+
+const int LevelConfig::getRowCount() const {
+	std::cout << "---> LevelConfig::getRowCount ---> Returning Level rowCount: " + rowCount << std::endl;
+	return rowCount;
+}
+
+const int LevelConfig::getColumnCount() const {
+	std::cout << "---> LevelConfig::getColumnCount ---> Returning Level columnCount: " + columnCount << std::endl;
+	return columnCount;
+}
+
+const int LevelConfig::getRowSpacing() const {
+	std::cout << "---> LevelConfig::getRowSpacing ---> Returning Level rowSpacing: " + rowSpacing << std::endl;
+	return rowSpacing;
+}
+
+const int LevelConfig::getColumnSpacing() const {
+	std::cout << "---> LevelConfig::getColumnSpacing ---> Returning Level columnSpacing: " + columnSpacing << std::endl;
+	return columnSpacing;
+}
+
+const std::string LevelConfig::getBackgroundTexture() const {
+	std::cout << "---> LevelConfig::getBackgroundTexture ---> Returning Level backgroundTexture: " + backgroundTexture << std::endl;
+	return backgroundTexture;
+}
+
+const std::vector<std::vector<Brick*>> LevelConfig::getBricksMatrix() const {
+	std::cout << "---> LevelConfig::getBricksMatrix ---> Returning Level bricks matrix. " << std::endl;
+	return bricksMatrix;
 }

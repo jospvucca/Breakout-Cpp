@@ -23,3 +23,7 @@ std::unique_ptr<Brick> HardBrick::clone() const {
 void HardBrick::displayInfo() const {
 	std::cout << "---> Hard Brick info...(TODO)" << std::endl;
 }
+
+void HardBrick::createCollidable(int x, int y, int w, int h, SDL_Color&& color) {
+	std::cout << "---> HardBrick::createCollidable ---> Creating visual data for HardBrick..." << std::endl;
+}

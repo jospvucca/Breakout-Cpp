@@ -24,3 +24,6 @@ void MediumBrick::displayInfo() const {
 	std::cout << "Medium Brick info...(TODO)" << std::endl;
 }
 
+void MediumBrick::createCollidable(int x, int y, int w, int h, SDL_Color&& color) {
+	std::cout << "---> MediumBrick::createCollidable ---> Creating visual data for MediumBrick..." << std::endl;
+}

@@ -18,7 +18,8 @@ Game::Game(const int width, const int height, const char* fontPath, const char* 
 	font(nullptr),
 	currentTickMillis(0l),
 	previousTickMillis(0l),
-	deltaTime(0l) {
+	deltaTime(0l),
+	 levelConfig(levelConfig) {
 	std::cout << "---> Game::ctor(For window -> Width: " + std::to_string(width) + ", Height: " + std::to_string(height) + ")." + "TODO: fontPath" << std::endl;
 	this->scene = nullptr;
 

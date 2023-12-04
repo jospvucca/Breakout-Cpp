@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <optional>
+#include <SDL.h>
 
 class Brick {
 public:
@@ -13,6 +14,8 @@ public:
 	//virtual void onHit() const = 0;
 	//virtual void onBreak() const = 0;
 	//virtual int getHitpoints() const = 0;
+
+	virtual void createCollidable(int x, int y, int w, int h, SDL_Color&& color) = 0;
 
 //protected:
 	Brick() = default;

@@ -24,3 +24,6 @@ void SoftBrick::displayInfo() const {
 	std::cout << "Soft Brick info...(TODO)" << std::endl;
 }
 
+void SoftBrick::createCollidable(int x, int y, int w, int h, SDL_Color&& color) {
+	std::cout << "---> SoftBrick::createCollidable ---> Creating visual data for SoftBrick..." << std::endl;
+}

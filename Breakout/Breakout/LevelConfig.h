@@ -13,6 +13,15 @@ public:
 		const std::string backgroundTexture, const std::vector<std::vector<char>> matrixBrickLayout);
 	const std::string ToString() const;
 	std::string LevelConfigstringifyMatrix(const std::vector<std::vector<char>>& matrix);
+
+	const int getNumber() const;
+	const int getRowCount() const;
+	const int getColumnCount() const;
+	const int getRowSpacing() const;
+	const int getColumnSpacing() const;
+	const std::string getBackgroundTexture() const;
+	const std::vector<std::vector<Brick*>> getBricksMatrix() const;
+
 private:
 	int number;		//Defining what level is loaded
 	int rowCount;

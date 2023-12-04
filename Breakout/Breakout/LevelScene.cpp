@@ -77,6 +77,20 @@ LevelScene::LevelScene(Game& game) :
 	TESTING BRICKS IMPORT WITH OTHER PARAMETERS
 	*/
 
+	auto x = slotWidth;
+	auto y = slotHeight * 5 + digitHeight + slotSpacing;
+
+	auto bricksMatrix = this->game.getLevelConfig().getBricksMatrix();
+	for (int i = 0; i < bricksMatrix.size(); i++) {
+		for (int j = 0; j < bricksMatrix[i].size(); i++) {
+			auto brick = bricksMatrix[i][j];
+			brick->createCollidable(x, y, slotWidth, slotHeight, {255, 0, 0, 255});
+
+			x += slotWidth + slotSpacing;
+		}
+		y += slotHeight + slotSpacing;
+	}
+
 }
 
 LevelScene::~LevelScene() {
