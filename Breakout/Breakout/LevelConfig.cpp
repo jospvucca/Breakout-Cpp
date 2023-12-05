@@ -16,31 +16,53 @@ LevelConfig::LevelConfig(const int levelNumber, const int rows, const int column
 	this->columnSpacing = columnSpacing;
 	this->backgroundTexture = backgroundTexture;
 
+
+
+	this->matrixBrickLayout = matrixBrickLayout;
+
+
 	//bricksMatrix.resize(rowCount, std::vector<std::unique_ptr<Brick>>(columnCount, nullptr));
-	bricksMatrix.resize(rowCount);
-
+	//bricksMatrix.resize(rowCount);
+	//for (int i = 0; i < rowCount; i++) {
+	//	bricksMatrix[i].resize(columnCount);
+	//	for (int j = 0; j < columnCount; j++) {
+	//		bricksMatrix[i][j] = std::move(brickFactory.createBrick(matrixBrickLayout[i][j]));
+	//	}
+	//}
 	
-	BrickFactory& brickFactory = BrickFactory::getInstance();
-	std::cout << "Creating Bricks from position: " + LevelConfigstringifyMatrix(matrixBrickLayout) << std::endl << std::endl;
-
-	for (size_t i = 0; i < matrixBrickLayout.size(); i++)
-	{
-		std::vector<char> inlineBrickVector = matrixBrickLayout.at(i);
-		std::vector<std::unique_ptr<Brick>> inlineBrickResult;
-
-		auto moveIterator = std::make_move_iterator(inlineBrickVector.begin());
-		for (size_t c = 0; c < inlineBrickVector.size(); c++)
-		{
+	//BrickFactory& brickFactory = BrickFactory::getInstance();
+	//std::cout << "Creating Bricks from position: " + LevelConfigstringifyMatrix(matrixBrickLayout) << std::endl << std::endl;
 
 
+	//bricksMatrixX.resize(rowCount);
+	//for (int i = 0; i < rowCount; i++) {
+	//	bricksMatrixX[i].resize(columnCount);
+	//	for (int j = 0; j < columnCount; j++) {
+	//		bricksMatrixX[i][j] = std::move(brickFactory.createBrick(matrixBrickLayout[i][j]));
+	//	}
+	//}
 
-			//TODO this issue still persists
-			char brickId = inlineBrickVector.at(c);
-			std::cout << "Creating Brick with id: " << brickId << std::endl;
-			inlineBrickResult.emplace_back(brickFactory.createBrick(inlineBrickVector.at(c)));
-		}
-		//bricksMatrix.emplace_back(std::make_move_iterator(inlineBrickResult.begin()), std::make_move_iterator(inlineBrickResult.end()));
-	}
+
+
+	//for (size_t i = 0; i < matrixBrickLayout.size(); i++)
+	//{
+	//	std::vector<char> inlineBrickVector = matrixBrickLayout.at(i);
+	//	std::vector<std::unique_ptr<Brick>> inlineBrickResult;
+
+	//	//auto moveIterator = std::make_move_iterator(inlineBrickVector.begin());
+	//	for (size_t c = 0; c < inlineBrickVector.size(); c++)
+	//	{
+
+
+
+	//		//TODO this issue still persists
+	//		char brickId = inlineBrickVector.at(c);
+	//		std::cout << "Creating Brick with id: " << brickId << std::endl;
+	//		//inlineBrickResult.emplace_back(brickFactory.createBrick(inlineBrickVector.at(c)));
+	//		//bricksMatrixX[i][c] = std::move(brickFactory.createBrick(inlineBrickVector.at(c)));
+	//	}
+	//	//bricksMatrix.emplace_back(std::make_move_iterator(inlineBrickResult.begin()), std::make_move_iterator(inlineBrickResult.end()));
+	//}
 
 	//std::cout << "---> LevelConfig::ctor ---> Successfully created: " + std::to_string()
 	std::cout << "---> LevelConfig::ctor ---> Successfully created LevelConfig: " + this->ToString() << std::endl;
@@ -99,7 +121,13 @@ const std::string LevelConfig::getBackgroundTexture() const {
 	return backgroundTexture;
 }
 
-const std::vector<std::vector<Brick*>> LevelConfig::getBricksMatrix() const {
-	std::cout << "---> LevelConfig::getBricksMatrix ---> Returning Level bricks matrix. " << std::endl;
-	return bricksMatrix;
+//const std::vector<std::vector<Brick*>> LevelConfig::getBricksMatrix() const {
+//	std::cout << "---> LevelConfig::getBricksMatrix ---> Returning Level bricks matrix. " << std::endl;
+//	//return bricksMatrix;
+//	return std::vector<std::vector<Brick*>>();
+//}
+
+const std::vector<std::vector<char>> LevelConfig::getMatrixBrickLayout() const {
+	std::cout << "---> LevelConfig::getMatrixBrickLayout ---> Returning Level matrixBrickLayout. " << std::endl;
+	return matrixBrickLayout;
 }

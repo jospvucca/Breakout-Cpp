@@ -20,7 +20,10 @@ public:
 	const int getRowSpacing() const;
 	const int getColumnSpacing() const;
 	const std::string getBackgroundTexture() const;
-	const std::vector<std::vector<Brick*>> getBricksMatrix() const;
+	//const std::vector<std::vector<Brick*>> getBricksMatrix() const;
+	
+
+	const std::vector<std::vector<char>> getMatrixBrickLayout() const;
 
 private:
 	int number;		//Defining what level is loaded
@@ -30,7 +33,10 @@ private:
 	int columnSpacing;
 	std::string backgroundTexture;
 
-	std::vector<std::vector<Brick*>> bricksMatrix;	//Consider using std::optional<Brick> for cleaner representation of empty place, opther option is using '_' to represent empty brick - it can lead to more classes(base) created
+	std::vector<std::vector<char>> matrixBrickLayout;
+
+/*	std::vector<std::vector<std::unique_ptr<Brick>>> bricksMatrixX;
+	std::vector<std::vector<Brick*>> bricksMatrix;*/	//Consider using std::optional<Brick> for cleaner representation of empty place, opther option is using '_' to represent empty brick - it can lead to more classes(base) created
 };
 
 #endif // !__LEVEL_CONFIG_H__

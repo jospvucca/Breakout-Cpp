@@ -130,6 +130,9 @@ BrickPositioning XMLParser::parsePositionData(const pugi::xml_node& root) {
     std::istringstream iss(bricksData);
     std::string line;
     while (std::getline(iss, line)) {
+        if (line.empty()) {
+            continue;
+        }
         std::vector<char> inlinePositions(line.begin(), line.end());
         brickPositions.emplace_back(inlinePositions);   //Posibly push_back instead of emplace
     }

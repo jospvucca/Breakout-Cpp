@@ -44,6 +44,8 @@ private:
 	Paddle paddle;
 
 	Collidable outOfBoundsArea;
+
+	std::vector<std::vector<std::unique_ptr<Brick>>> bricksMatrixX;
 };
 
 #endif // !__LEVEL_SCENE_H__

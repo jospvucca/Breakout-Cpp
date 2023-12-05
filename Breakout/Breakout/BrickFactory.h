@@ -12,11 +12,14 @@
 //TODO - decide on singleton option
 class BrickFactory final {
 public:
-	static BrickFactory& getInstance();
-	std::unique_ptr<Brick> createBrick(const char& brickId);
+	static BrickFactory& getInstance(Game& game);
+	//std::unique_ptr<Brick> createBrick(const char& brickId);
+
+	std::unique_ptr<Brick> createBrick(const char& brickId, Game& game);
+	std::unique_ptr<Brick> cloneBrick(const char& brickId, Game& game) const;
 
 private:
-	BrickFactory();
+	BrickFactory(Game& game);
 	~BrickFactory();
 
 	static BrickFactory* instance;

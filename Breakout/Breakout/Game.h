@@ -11,7 +11,7 @@
 
 class Game final {  //TODO - create game a singleton type with method start(getInstance), possibly static with scene as main guy with additional class with window/renderer(my idea is thats how game engines work behind the scenes) - but i wont have time probably
 public:
-    Game() = delete;
+    Game() = default;
     Game(const Game&) = delete;     //TODO - forgot to add copy const delete variance and operator = to singletons and others that should not be created that way
     Game(Game&&) = delete;
     Game& operator=(const Game&) = delete;

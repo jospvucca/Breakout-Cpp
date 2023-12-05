@@ -6,16 +6,22 @@
 #include <optional>
 #include <SDL.h>
 
+class Game;
+
 class Brick {
 public:
 	//~Brick() = default;
-	virtual std::unique_ptr<Brick> clone() const = 0;
+	virtual std::unique_ptr<Brick> clone(Game& game) const = 0;
 	virtual void displayInfo() const = 0;
+	//Brick(const Brick&) = delete;
+	//Brick& operator=(const Brick&) = delete;
+
 	//virtual void onHit() const = 0;
 	//virtual void onBreak() const = 0;
 	//virtual int getHitpoints() const = 0;
 
 	virtual void createCollidable(int x, int y, int w, int h, SDL_Color&& color) = 0;
+	virtual void render(SDL_Renderer& renderer) const = 0;
 
 //protected:
 	Brick() = default;
