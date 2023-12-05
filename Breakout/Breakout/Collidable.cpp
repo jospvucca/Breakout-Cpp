@@ -10,6 +10,10 @@ Collidable::Collidable(Game& game) :
 	std::cout << "---> Collidable:ctor(game) ---> Creating a Collidable Object." << std::endl;
 }
 
+Collidable::~Collidable() {
+	Drawable::~Drawable();
+}
+
 bool Collidable::onCollision(const Collidable& other) const {
 	//std::cout << "Collidable::onCollision ---> TODO" << std::endl;
 

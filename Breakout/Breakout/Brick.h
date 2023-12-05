@@ -7,11 +7,12 @@
 #include <SDL.h>
 
 class Game;
+class Collidable;
 
 class Brick {
 public:
 	//~Brick() = default;
-	virtual std::unique_ptr<Brick> clone(Game& game) const = 0;
+	virtual std::unique_ptr<Brick> clone(Game& game) = 0;
 	virtual void displayInfo() const = 0;
 	//Brick(const Brick&) = delete;
 	//Brick& operator=(const Brick&) = delete;
@@ -20,7 +21,9 @@ public:
 	//virtual void onBreak() const = 0;
 	//virtual int getHitpoints() const = 0;
 
+	virtual const void decreaseHitpoints() = 0;
 	virtual void createCollidable(int x, int y, int w, int h, SDL_Color&& color) = 0;
+	virtual const Collidable& getCollidable() const = 0;
 	virtual void render(SDL_Renderer& renderer) const = 0;
 
 //protected:

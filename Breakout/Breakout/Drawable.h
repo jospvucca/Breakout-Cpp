@@ -7,7 +7,7 @@
 class Drawable : public Object {
 public:
 	Drawable(Game& game);
-	virtual ~Drawable() = default;
+	~Drawable();
 	
 	virtual void render(SDL_Renderer& renderer) const;
 

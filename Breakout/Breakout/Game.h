@@ -8,6 +8,7 @@
 #include <SDL_ttf.h>
 #include <iostream>
 #include "LevelConfig.h"
+#include "ParseData.h"
 
 class Game final {  //TODO - create game a singleton type with method start(getInstance), possibly static with scene as main guy with additional class with window/renderer(my idea is thats how game engines work behind the scenes) - but i wont have time probably
 public:
@@ -17,7 +18,7 @@ public:
     Game& operator=(const Game&) = delete;
     Game& operator=(Game&&) = delete;
 
-    Game(const int width, const int height, const char* fontPath, const char* title, const LevelConfig& levelConfig);
+    Game(const int width, const int height, const char* fontPath, const char* title, const LevelConfig& levelConfig, const ParseData& levelParseData);
 	~Game();
 
     void loadScene(std::shared_ptr<Scene> scene);
@@ -29,6 +30,7 @@ public:
     SDL_Texture* createText(const std::string& text);
 
     const LevelConfig getLevelConfig() const { return std::move(levelConfig); }
+    ParseData getParseData() { return parseData; }
 
 private:
     SDL_Window* window;     //TODO - This and renderer should def be singletons, ensure in later stages of development
@@ -43,6 +45,7 @@ private:
     unsigned long deltaTime;
 
     LevelConfig levelConfig;
+    ParseData parseData;
 };
 
 #endif // !__GAME_H__

@@ -10,7 +10,7 @@ inline unsigned long currentMillis() {
 }
 
 //TODO - use LevelFactory and Config
-Game::Game(const int width, const int height, const char* fontPath, const char* title, const LevelConfig& levelConfig) : 
+Game::Game(const int width, const int height, const char* fontPath, const char* title, const LevelConfig& levelConfig, const ParseData& parseData) : 
 	window(nullptr),		//TODO - change to singleton type method getInstance()
 	renderer(nullptr),		//TODO - same
 	scene(nullptr),
@@ -19,7 +19,8 @@ Game::Game(const int width, const int height, const char* fontPath, const char* 
 	currentTickMillis(0l),
 	previousTickMillis(0l),
 	deltaTime(0l),
-	 levelConfig(levelConfig) {
+	levelConfig(levelConfig),
+	parseData(parseData) {
 	std::cout << "---> Game::ctor(For window -> Width: " + std::to_string(width) + ", Height: " + std::to_string(height) + ")." + "TODO: fontPath" << std::endl;
 	this->scene = nullptr;
 

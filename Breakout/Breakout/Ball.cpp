@@ -66,19 +66,25 @@ void Ball::update(float dt) {
 	const Collidable& leftWall = scene->getLeftWall();
 	if (directionX < 0.0f && this->onCollision(leftWall)) {
 		setDirectionX(-getDirectionX());
-		return;												//TODO - check if its okay to use returns like this
+
+		increaseVelocity(incrementVelocity / 10);
+		//return;												//TODO - check if its okay to use returns like this
 	}
 
 	const Collidable& rightWall = scene->getRightWall();
 	if (directionX > 0.0f && this->onCollision(rightWall)) {
 		setDirectionX(-getDirectionX());
-		return;
+
+		increaseVelocity(incrementVelocity / 10);
+		//return;
 	}
 
 	const Collidable& topWall = scene->getTopWall();
 	if (directionY < 0.0f && this->onCollision(topWall)) {
 		setDirectionY(-getDirectionY());
-		return;
+
+		increaseVelocity(incrementVelocity / 10);
+		//return;
 	}
 
 	const Paddle& paddle = scene->getPaddle();
@@ -91,15 +97,61 @@ void Ball::update(float dt) {
 		newDirection = normalize(newDirection);
 		setDirectionX(newDirection[0]);
 		setDirectionY(newDirection[1]);
-		return;
+
+		increaseVelocity(incrementVelocity / 10);
+
+		//return;
 	}
 
 	if (directionX > 0.0f && this->onCollision(scene->getOutOfBoundsArea())) {
 		scene->endGame();
-		return;
+		//return;
 	}
 
 	//TODO - brick hits
+
+
+	for (int i = 0; i < this->game.getLevelConfig().getMatrixBrickLayout().size(); i++) {
+		for (int j = 0; j < this->game.getLevelConfig().getMatrixBrickLayout().at(i).size(); j++) {
+
+			if (this->game.getLevelConfig().getMatrixBrickLayout().at(i).at(j) == '_') {
+				continue;
+			}
+
+			if (this->onCollision(scene->getBrickCollidableByLocation(i, j))) {
+				setDirectionY(-getDirectionY());
+				//directionX *= (-1.0f);
+
+				//increaseVelocity(incrementVelocity / 10);
+
+				if (scene->bricksMatrixX.at(i).at(j)->hitpoints.has_value()) {
+					scene->bricksMatrixX.at(i).at(j)->decreaseHitpoints();
+
+					//if(scene->bricksMatrixX.at(i).at(j)->)
+				}
+
+			}
+
+
+
+			//auto brick = scene->getBrickCollidableByLocation(i, j);
+
+			//if (this->onCollision(brick)) {
+			//	auto t = brick;
+			//}
+
+
+			//std::unique_ptr<Brick> casted = std::move(scene->getBricks().at(i).at(j));
+
+			//if (this->onCollision(scene->getBricks().at(i).at(j))) {
+
+			//}
+		}
+	}
+
+
+
+
 	this->move(dt);
 }
 

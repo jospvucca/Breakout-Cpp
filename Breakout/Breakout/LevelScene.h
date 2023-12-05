@@ -32,6 +32,9 @@ public:
 	void resetBallAndPaddle();
 	void endGame();	//TODO - change location
 
+	const std::vector<std::vector<std::unique_ptr<Brick>>> getBricks() { return std::move(bricksMatrixX); }
+	const Collidable& getBrickCollidableByLocation(int i, int j);
+
 private:
 	void refreshScore();
 
@@ -45,6 +48,7 @@ private:
 
 	Collidable outOfBoundsArea;
 
+public:
 	std::vector<std::vector<std::unique_ptr<Brick>>> bricksMatrixX;
 };
 

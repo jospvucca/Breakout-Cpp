@@ -128,6 +128,6 @@ const std::string LevelConfig::getBackgroundTexture() const {
 //}
 
 const std::vector<std::vector<char>> LevelConfig::getMatrixBrickLayout() const {
-	std::cout << "---> LevelConfig::getMatrixBrickLayout ---> Returning Level matrixBrickLayout. " << std::endl;
+	//std::cout << "---> LevelConfig::getMatrixBrickLayout ---> Returning Level matrixBrickLayout. " << std::endl;
 	return matrixBrickLayout;
 }

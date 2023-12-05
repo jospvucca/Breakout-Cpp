@@ -7,7 +7,7 @@
 class Collidable : public Drawable {
 public:
 	Collidable(Game& game);
-	virtual ~Collidable() = default;
+	~Collidable();
 
 	bool onCollision(const Collidable& other) const;
 

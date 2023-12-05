@@ -8,7 +8,7 @@
 // The divisor of the slot width related to window client area width.
 #define SLOT_WIDTH_DIVISOR  6
 // the divisor of the slot height related to window client area width.
-#define SLOT_HEIGHT_DIVISOR 55
+#define SLOT_HEIGHT_DIVISOR 45
 
 //I dislike that i have to pass game to every object, perhaps it would be better to remove the game param from object ctor
 LevelScene::LevelScene(Game& game) :
@@ -241,4 +241,8 @@ void LevelScene::endGame() {
 
 void LevelScene::refreshScore() {
 	std::cout << "---> LevelScene::refreshScore ---> TODO" << std::endl;
+}
+
+const Collidable& LevelScene::getBrickCollidableByLocation(int i, int j) {
+	return this->bricksMatrixX.at(i).at(j)->getCollidable();
 }
